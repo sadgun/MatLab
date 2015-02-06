@@ -5,9 +5,12 @@ clear all;
 clc;
 tic;
     %% Read and display image
-imageName = 'cloudgate.jpg';        % Image path
+imageName = 'cameraman.tif';        % Image path
 Input_image = imread(imageName);
-Input_image = rgb2gray(Input_image);
+[rows, columns, numberOfColorChannels] = size(Input_image);
+if numberOfColorChannels > 1
+  Igray = rgb2gray(Input_image);
+end
 figure(1);
 imshow(Input_image);
 title('Original Image');
