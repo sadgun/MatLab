@@ -9,7 +9,7 @@ imageName = 'cameraman.tif';        % Image path
 Input_image = imread(imageName);
 [rows, columns, numberOfColorChannels] = size(Input_image);
 if numberOfColorChannels > 1
-  Igray = rgb2gray(Input_image);
+  Input_image = rgb2gray(Input_image);
 end
 figure(1);
 imshow(Input_image);
